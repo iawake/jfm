@@ -426,7 +426,24 @@ async function businessCircleActivity() {
         await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈PK奖励】${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
       }
     }
-  } 
+  } else if (businessCirclePKDetailRes && businessCirclePKDetailRes.data.bizCode === 206) {
+    console.log(`您暂未加入商圈,现在给您加入lxk0301的商圈`);
+    const joinBusinessCircleRes = await smtg_joinBusinessCircle(myCircleId);
+    console.log(`参加商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
+    if (joinBusinessCircleRes.data.bizCode !== 0) {
+      console.log(`您加入lxk0301的商圈失败，现在给您随机加入一个商圈`);
+      const BusinessCircleList = await smtg_getBusinessCircleList();
+      if (BusinessCircleList.data.bizCode === 0) {
+        const { businessCircleVOList } = BusinessCircleList.data.result;
+        const { circleId } = businessCircleVOList[randomFriendPin(0, businessCircleVOList.length -1)];
+        const joinBusinessCircleRes = await smtg_joinBusinessCircle(circleId);
+        console.log(`随机加入商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
+      }
+    }
+  } else {
+    console.log(`访问商圈详情失败：${JSON.stringify(businessCirclePKDetailRes)}`);
+  }
+}
 //我的货架
 async function myProductList() {
   const shelfListRes = await smtg_shelfList();
