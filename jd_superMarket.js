@@ -28,7 +28,7 @@ let cookiesArr = [], cookie = '', jdSuperMarketShareArr = [], notify, newShareCo
 
 let jdNotify = true;//用来是否关闭弹窗通知，true表示关闭，false表示开启。
 let superMarketUpgrade = true;//自动升级,顺序:解锁升级商品、升级货架,true表示自动升级,false表示关闭自动升级
-let businessCircleJump = true;//小于对方300热力值自动更换商圈队伍,true表示运行,false表示禁止
+let businessCircleJump = false;//小于对方300热力值自动更换商圈队伍,true表示运行,false表示禁止
 let drawLotteryFlag = false;//是否用500蓝币去抽奖，true表示开启，false表示关闭。默认关闭
 let message = '', subTitle;
 const JD_API_HOST = 'https://api.m.jd.com/api';
@@ -38,9 +38,9 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
   //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaejjYv4g8T2EwnsVhQ',
+  '',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'aURoM7PtY_Q@eU9Ya-y2N_5z9DvXwyIV0A@eU9YaOnjYK4j-GvWmXIWhA',
+  '',
 ]
 
 !(async () => {
@@ -426,24 +426,7 @@ async function businessCircleActivity() {
         await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈PK奖励】${pkPersonPrizeInfoVO.blueCoin + pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
       }
     }
-  } else if (businessCirclePKDetailRes && businessCirclePKDetailRes.data.bizCode === 206) {
-    console.log(`您暂未加入商圈,现在给您加入lxk0301的商圈`);
-    const joinBusinessCircleRes = await smtg_joinBusinessCircle(myCircleId);
-    console.log(`参加商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
-    if (joinBusinessCircleRes.data.bizCode !== 0) {
-      console.log(`您加入lxk0301的商圈失败，现在给您随机加入一个商圈`);
-      const BusinessCircleList = await smtg_getBusinessCircleList();
-      if (BusinessCircleList.data.bizCode === 0) {
-        const { businessCircleVOList } = BusinessCircleList.data.result;
-        const { circleId } = businessCircleVOList[randomFriendPin(0, businessCircleVOList.length -1)];
-        const joinBusinessCircleRes = await smtg_joinBusinessCircle(circleId);
-        console.log(`随机加入商圈结果：${JSON.stringify(joinBusinessCircleRes)}`)
-      }
-    }
-  } else {
-    console.log(`访问商圈详情失败：${JSON.stringify(businessCirclePKDetailRes)}`);
-  }
-}
+  } 
 //我的货架
 async function myProductList() {
   const shelfListRes = await smtg_shelfList();
