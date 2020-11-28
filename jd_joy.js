@@ -599,7 +599,7 @@ function getPetRace() {
   })
 }
 //参加赛跑API
-function runMatch(teamLevel, timeout = 5000) {
+function runMatch(teamLevel, timeout = 1000) {
   console.log(`正在参赛中，请稍等${timeout / 1000}秒，以防多个账号匹配到统一赛场\n`)
   return new Promise(async resolve => {
     await $.wait(timeout);
