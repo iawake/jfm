@@ -154,7 +154,7 @@ async function helpFriends() {
   if (!$.updatePkActivityIdRes) await updateInviteCodeCDN();
   for (let item of $.inviteCodes.inviteCode) {
     if (!item) continue
-    await createAssistUser(item, $.createAssistUserID || "1318106976846299138");
+    await createAssistUser(item, $.createAssistUserID || "");
   }
 }
 async function doAllTask() {
@@ -166,7 +166,7 @@ async function doAllTask() {
   for (let item of $.taskList) {
     if (item.ssjjTaskInfo.type === 1) {
       //邀请好友助力自己
-      // await createAssistUser('1330186694770339842', item.ssjjTaskInfo.id)
+      // await createAssistUser('', item.ssjjTaskInfo.id)
       $.createAssistUserID = item.ssjjTaskInfo.id;
       console.log(`\n\n助力您的好友:${item.doneNum}人`)
     }
