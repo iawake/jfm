@@ -13,8 +13,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [],
     cookie = '',
     sharecodes = [
-        'P04z54XCjVXmIaW5jEBAWT_2nxKkRUs', //账号 1
-        'P04z54XCjVXmIaW5jEBAWT_2nxKkRUs', //账号 2
+        '', //账号 1
+        '', //账号 2
     ];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
