@@ -33,7 +33,7 @@ if ($.isNode()) {
   cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')]);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [`P04z54XCjVUnoaW5jEBAWT_2nxKkVc1`];
+const inviteCodes = [``];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
