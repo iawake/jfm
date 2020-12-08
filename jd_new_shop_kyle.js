@@ -184,7 +184,7 @@ async function lottery() {
     const functionId = 'interact_template_getLotteryResult';
     const body = `'appId':'1EFRQxA'`;
     while ($.homeData.data.result.userInfo.userScore > 500) {
-        $.lottery = await request(functionId, body);
+        $.lottery = await sleep(1000);
         if ($.lottery.data.result.userAwardsCacheDto.type === 2) {
             console.log('获得京豆：' + $.lottery.data.result.userAwardsCacheDto.jBeanAwardVo.quantity + '个');
             beanCount = benCount + parseInt($.lottery.data.result.userAwardsCacheDto.jBeanAwardVo.quantity)
