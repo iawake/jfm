@@ -177,27 +177,6 @@ async function share() {
     }
 }
 
-// 抽奖
-async function lottery() {
-    console.log('开始抽奖');
-    await getHomeData();
-    const functionId = 'interact_template_getLotteryResult';
-    const body = `'appId':'1EFRQxA'`;
-    while ($.homeData.data.result.userInfo.userScore > 500) {
-        $.lottery = await request(functionId, body);
-        if ($.lottery.data.result.userAwardsCacheDto.type === 2) {
-            console.log('获得京豆：' + $.lottery.data.result.userAwardsCacheDto.jBeanAwardVo.quantity + '个');
-            beanCount = benCount + parseInt($.lottery.data.result.userAwardsCacheDto.jBeanAwardVo.quantity)
-        } else if ($.lottery.data.result.userAwardsCacheDto.type === 1) {
-            console.log('获得优惠券: 满' + $.lottery.data.result.userAwardsCacheDto.couponVo.usageThreshold + '减' + $.lottery.data.result.userAwardsCacheDto.couponVo.quota);
-        }
-        await getHomeData();
-        await sleep(1000);
-    }
-    console.log('金币不足无法抽奖');
-    $.msg('新店福利', subTitle, '\n 获得京豆' + beanCount + '个,优惠券前往个人中心查看')
-}
-
 function sleep(s) {
     return new Promise((resolve) => {
         setTimeout(() => {
