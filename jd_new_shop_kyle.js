@@ -183,7 +183,7 @@ async function lottery() {
     await getHomeData();
     const functionId = 'interact_template_getLotteryResult';
     const body = `'appId':'1EFRQxA'`;
-    while ($.homeData.data.result.userInfo.userScore > 500) {
+    while ($.homeData.data.result.userInfo.userScore > 5000) {
         $.lottery = await request(functionId, body);
         if ($.lottery.data.result.userAwardsCacheDto.type === 2) {
             console.log('获得京豆：' + $.lottery.data.result.userAwardsCacheDto.jBeanAwardVo.quantity + '个');
