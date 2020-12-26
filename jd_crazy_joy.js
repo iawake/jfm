@@ -26,8 +26,8 @@ let helpSelf = true // 循环助力，默认关闭
 let applyJdBean = 0
 let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
-  'wVLpzgI95rNd3cmh3u0X2A==',
-  'wVLpzgI95rNd3cmh3u0X2A=='
+  '',
+  ''
 ];
 const randomCount = 5;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -572,7 +572,7 @@ function taskUrl(functionId, body = '') {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://code.chiang.fun/api/v1/jd/jdcrazyjoy/read/${randomCount}/`}, (err, resp, data) => {
+    $.get({url: ``}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
