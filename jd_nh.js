@@ -96,8 +96,8 @@ async function jdNh() {
   await getUserInfo()
   await getActContent(false,shareUuid)
   await getActContent(true)
-  if($.userInfo.score>=10000){
-    console.log(`大于10000金币，去抽奖`)
+  if($.userInfo.score>=80000){
+    console.log(`大于80000金币，去抽奖`)
     await draw()
   }
   await showMsg();
