@@ -61,7 +61,7 @@ if ($.isNode()) {
   cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 $.newShareCodes = [];
-const JD_API_HOST = '';
+const JD_API_HOST = 'https://lkyl.dianpusoft.cn/api';
 
 !(async () => {
   if (!cookiesArr[0]) {
