@@ -1,4 +1,4 @@
-﻿/*
+/*
 5G狂欢城
 活动时间: 2021-1-30至2021-2-4
 活动入口：暂无
@@ -9,11 +9,14 @@
 [task_local]
 #5G狂欢城
 0 0,6,12,18 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_5g.js, tag=5G狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true
+
 ================Loon==============
 [Script]
 cron "0 0,6,12,18 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_5g.js, tag=5G狂欢城
+
 ===============Surge=================
 5G狂欢城 = type=cron,cronexp="0 0,6,12,18 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_5g.js
+
 ============小火箭=========
 5G狂欢城 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_5g.js, cronexpr="0 0,6,12,18 * * *", timeout=3600, enable=true
  */
