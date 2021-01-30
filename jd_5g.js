@@ -462,7 +462,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://jd.turinglabs.net/api/v2/jd/5g/read/${randomCount}/`,
+      url: ``,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -529,7 +529,7 @@ function requireConfig() {
         }
       })
     }
-    let data = await updateShareCodes("https://gitee.com/shylocks/updateTeam/raw/main/jd_818.json")
+    let data = await updateShareCodes("")
     if(data){
       inviteCodes[0] = data.join('@')
       inviteCodes[1] = data.join('@')
@@ -650,7 +650,7 @@ function jsonParse(str) {
     }
   }
 }
-function updateShareCodes(url = 'https://gitee.com/lxk0301/updateTeam/raw/master/jd_818.json') {
+function updateShareCodes(url = '') {
   return new Promise(resolve => {
     $.get({url,
       headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")}
