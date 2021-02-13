@@ -1,4 +1,4 @@
-﻿/*
+/*
 环球挑战赛
 活动时间：2021-02-02 至 2021-02-22
 1个号可以助力5人，需要5人助力，如每天跑满能换1000+京豆
@@ -11,11 +11,14 @@
 [task_local]
 #环球挑战赛
 0 9,12,20,21 2-22 2 * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_global.js, tag=环球挑战赛, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/lxk0301/jd_global.png, enabled=true
+
 ================Loon==============
 [Script]
 cron "0 9,12,20,21 2-22 2 *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_global.js,tag=环球挑战赛
+
 ===============Surge=================
 环球挑战赛 = type=cron,cronexp="0 9,12,20,21 2-22 2 *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_global.js
+
 ============小火箭=========
 环球挑战赛 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_global.js, cronexpr="0 9,12,20,21 2-22 2 *", timeout=3600, enable=true
  */
