@@ -321,7 +321,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://jd.turinglabs.net/api/v2/jd/jdglobal/read/${randomCount}/`,
+      url: ``,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
