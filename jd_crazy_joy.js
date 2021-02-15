@@ -26,8 +26,8 @@ let helpSelf = true // 循环助力，默认关闭
 let applyJdBean = 0
 let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
-  'PuAS5kYlV1U=@dpl7eaJifwvGK4o1yCsXmg==@x-1y1ORmomc=@C35FgrAK2bJ9BGvR8BN-hw==',
-  'PuAS5kYlV1U=@dpl7eaJifwvGK4o1yCsXmg==@x-1y1ORmomc=@C35FgrAK2bJ9BGvR8BN-hw=='
+  'PuAS5kYlV1U=@dpl7eaJifwvGK4o1yCsXmg==@x-1y1ORmomc=@C35FgrAK2bJ9BGvR8BN-hw==@76QM9vR4sRWfTu4IXLIrfQ==',
+  'PuAS5kYlV1U=@dpl7eaJifwvGK4o1yCsXmg==@x-1y1ORmomc=@C35FgrAK2bJ9BGvR8BN-hw==@76QM9vR4sRWfTu4IXLIrfQ=='
 ];
 const randomCount = 5;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
