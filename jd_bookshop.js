@@ -24,14 +24,14 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-const ACT_ID = 'dz2010100034444201', shareUuid = '6e443b680c5d4d89ad4796778c40599d'
+const ACT_ID = 'dz2010100034444201', shareUuid = ''
 let ADD_CART = false
 ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS : ADD_CART) : ($.getdata("ADD_CART") ? $.getdata("ADD_CART") : ADD_CART);
 // 加入购物车开关，与东东小窝共享
 
 let inviteCodes = [
-  '6e443b680c5d4d89ad4796778c40599d',
-  '6e443b680c5d4d89ad4796778c40599d'
+  '',
+  ''
 ]
 
 if ($.isNode()) {
@@ -615,7 +615,7 @@ function taskPostUrl(function_id, body) {
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
-      "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
+      "url": ``,
       "headers": {
         "Accept": "application/json,text/plain, */*",
         "Content-Type": "application/x-www-form-urlencoded",
