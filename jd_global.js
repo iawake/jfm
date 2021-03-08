@@ -321,7 +321,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `https://raw.githubusercontent.com/l499477004/updateteam/master/jd_globalShareCode.json`,
+      url: ``,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
