@@ -82,7 +82,7 @@ const JD_API_HOST = 'https://lkyl.dianpusoft.cn/api';
       await smallHome();
     }
   }
-  await updateInviteCodeCDN('https://gitee.com/lxk0301/updateTeam/raw/master/shareCodes/jd_updateSmallHomeInviteCode.json');
+  await updateInviteCodeCDN('');
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -260,7 +260,7 @@ async function doAllTask() {
 }
 function queryFurnituresCenterList() {
   return new Promise(resolve => {
-    $.get(taskUrl(`ssjj-furnitures-center/queryFurnituresCenterList`), async (err, resp, data) => {
+    $.get(taskUrl(``), async (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -781,7 +781,7 @@ function login(userName) {
     })
   })
 }
-function updateInviteCode(url = 'https://raw.githubusercontent.com/l499477004/updateTeam/master/jd_updateSmallHomeInviteCode.json') {
+function updateInviteCode(url = '') {
   return new Promise(resolve => {
     $.get({url}, async (err, resp, data) => {
       try {
