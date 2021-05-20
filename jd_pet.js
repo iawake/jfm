@@ -11,11 +11,11 @@
 =================================Quantumultx=========================
 [task_local]
 #东东萌宠
-15 6-18/6 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js, tag=东东萌宠, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png, enabled=true
+22 16 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js, tag=东东萌宠, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png, enabled=true
 
 =================================Loon===================================
 [Script]
-cron "5 16 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js,tag=东东萌宠
+cron "22 16 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js,tag=东东萌宠
 
 ===================================Surge================================
 东东萌宠 = type=cron,cronexp="15 6-18/6 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js
